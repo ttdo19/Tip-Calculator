@@ -22,7 +22,7 @@ class SettingsViewController: UIViewController {
     
     @IBAction func Mode(_ sender: Any) {
         let defaults = UserDefaults.standard
-            if mode.isOn {
+            if mode.isOn || (defaults.object(forKey: "SwitchState") == nil){
                 defaults.set(true, forKey: "SwitchState")
                 overrideUserInterfaceStyle = .light
             } else {
